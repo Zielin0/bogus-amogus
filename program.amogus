@@ -1,0 +1,7 @@
+load reg0,34
+load reg1, 35
+
+add reg0,    reg1
+
+stop
+
