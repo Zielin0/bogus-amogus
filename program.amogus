@@ -1,7 +1,10 @@
 load reg0, 34
 load reg1, 35
-
 add reg0, reg1
+
+load reg2, 100
+load reg3, 31
+sub reg3, reg2
 
 stop
 
