@@ -76,7 +76,7 @@ begin
         Inc(MemoryUsed);
     end;
 
-    WriteLn(Format('Memory: %d/%d B', [MemoryUsed, Length(Memory^)])); { Measure how many bytes from start to $00FF including }
+    WriteLn(Format('Memory: %d/%d B', [MemoryUsed, Length(Memory^)]));
 end;
 
 function InitInstruction(OpCode: Operation; left, right: Variant): Instruction;
