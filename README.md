@@ -35,12 +35,12 @@ Amogus Language is an assembly-like language.
 
 So far there are only 4 instructions:
 
-|Instruction|Params                   |Description                                                           |
-|-----------|-------------------------|----------------------------------------------------------------------|
-|`load`     |<register>, <number>     |Loads <number> into <register>                                        |
-|`add`      |<register1>, <register2> |Adds <register2> value to <register1> and saves to <register1>        |
-|`sub`      |<register1>, <register2> |Subtracts <register1> value from <register2> and saves to <register1> |
-|`stop`     |N/A                      |Ends the program                                                      |
+|Instruction|Params                       |Description                                                                 |
+|-----------|-----------------------------|----------------------------------------------------------------------------|
+|`load`     |`<register>`, `<number>`     |Loads `<number>` into `<register>`                                          |
+|`add`      |`<register1>`, `<register2>` |Adds `<register2>` value to `<register1>` and saves to `<register1>`        |
+|`sub`      |`<register1>`, `<register2>` |Subtracts `<register1>` value from `<register2>` and saves to `<register1>` |
+|`stop`     |N/A                          |Ends the program                                                            |
 
 ## TODO List
 
