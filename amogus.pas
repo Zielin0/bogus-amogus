@@ -15,7 +15,7 @@ type
         OperandLeft: Variant;
         OperandRight: Variant;
     end;
-    ParseInstructions = array of Instruction;
+    InstructionArray = array of Instruction;
     ByteArray = array of Byte;
     PByteArray = ^ByteArray;
 
@@ -203,14 +203,14 @@ begin
     end;
 end;
 
-function ParseAmogus(FilePath: String; Source: Lines): ParseInstructions;
+function ParseAmogus(FilePath: String; Source: Lines): InstructionArray;
 var
     LineInstruction: Instruction;
-    InstructionsReturn: ParseInstructions;
+    InstructionsReturn: InstructionArray;
     i, InstructionCount: Integer;
 begin
     InstructionCount := 0;
-    InstructionsReturn := ParseInstructions.create(InitInstruction(Operation.ILLEGAL, Unassigned, Unassigned));
+    InstructionsReturn := InstructionArray.create(InitInstruction(Operation.ILLEGAL, Unassigned, Unassigned));
 
     for i := 0 to Length(Source)-1 do
     begin
@@ -233,7 +233,7 @@ begin
     SetLength(ArrayOfBytes^, Count^+1);
 end;
 
-function CompileAmogus(Instructions: ParseInstructions): ByteArray;
+function CompileAmogus(Instructions: InstructionArray): ByteArray;
 var
     ReturnBytes: ByteArray;
     ByteCount, i: Integer;
@@ -300,7 +300,7 @@ begin
 end;
 
 {$ifdef DEBUG}
-procedure PrintInstructions(Instructions: ParseInstructions);
+procedure PrintInstructions(Instructions: InstructionArray);
 var
     i: Integer;
 begin
@@ -329,7 +329,7 @@ var
     InputFile: TextFile;
     OutputFile: TMemoryStream;
     AmogusContent: Lines;
-    InstructionsParsed: ParseInstructions;
+    InstructionsParsed: InstructionArray;
     BytesToWrite: ByteArray;
     i: Integer;
 
